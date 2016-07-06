@@ -22,7 +22,7 @@ TODO: List your cookbook attributes here.
     <td><tt>['mackerel']['packages']</tt></td>
     <td>Array</td>
     <td>mackerel packages</td>
-    <td><tt>%w{mackerel-agent mackerel-agent-plugins}</tt></td>
+    <td><tt>%w(mackerel-agent mackerel-agent-plugins)</tt></td>
   </tr>
   <tr>
     <td><tt>['mackerel']['apikey']</tt></td>
@@ -40,13 +40,13 @@ TODO: List your cookbook attributes here.
     <td><tt>['mackerel']['iptables']['services']</tt></td>
     <td>Array</td>
     <td>iptables services</td>
-    <td><tt>%w{iptables ip6tables}</tt></td>
+    <td><tt>%w({)iptables ip6tables)</tt></td>
   </tr>
   <tr>
     <td><tt>['mackerel']['td_agent2']['gems']</tt></td>
     <td>Array</td>
     <td>td-agent2 gems</td>
-    <td><tt>%w{ fluent-plugin-datacounter fluent-plugin-mackerel }</tt></td>
+    <td><tt>%w(fluent-plugin-datacounter fluent-plugin-mackerel)</tt></td>
   </tr>
   <tr>
     <td><tt>['mackerel']['td_agent2']['endpoint']</tt></td>
