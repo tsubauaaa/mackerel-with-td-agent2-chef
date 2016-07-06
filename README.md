@@ -28,7 +28,7 @@ TODO: List your cookbook attributes here.
     <td><tt>['mackerel']['apikey']</tt></td>
     <td>String</td>
     <td>Your mackerel API keys</td>
-    <td><tt><YOUR_MACKEREL_API_KEY></tt></td>
+    <td><tt>YOUR_MACKEREL_API_KEY</tt></td>
   </tr>
   <tr>
     <td><tt>['mackerel']['iptables']['config']</tt></td>
