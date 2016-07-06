@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+  synced_folders:
+    - ["./", "/vagrant"]
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos6
+
+suites:
+  - name: default
+    run_list:
+      - recipe[mackerel::default]
+    attributes:

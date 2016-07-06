@@ -1,0 +1,32 @@
+<source>
+  type tail
+  format syslog
+  path /var/log/secure
+  tag log.secure
+  pos_file /tmp/secure.pos
+</source>
+
+
+<match log.secure>
+  type datacounter
+  count_interval 60s
+  count_key message
+  output_per_tag yes
+  pattern1 password_accepted ^Accepted password
+  pattern2 password_failed ^Failed password
+  pattern3 publickey_accepted ^Accepted publickey
+  pattern4 publickey_failed ^Failed publickey
+  tag_prefix count
+</match>
+
+<match count.log.secure>
+  type mackerel
+  api_key <%= node['mackerel']['apikey'] %>
+  hostid_path /var/lib/mackerel-agent/id
+  metrics_name Secure_log.${out_key}
+  out_keys password_accepted_count,password_failed_count,publickey_accepted_count,publickey_failed_count
+  use_zero_for_empty
+  #service {{ service-name }}
+  flush_interval 60s
+  origin <%= node['mackerel']['td_agent2']['endpoint'] %>
+</match>
